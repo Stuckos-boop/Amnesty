@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCHON STACK — Venture Architecture & Mainframe Logic</title>
+    <style>
+        /* Brutalist, high-contrast, pure-css resetting */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            cursor: crosshair;
+        }
+
+        body {
+            background-color: #1C1E21; /* Raw Slate Charcoal */
+            color: #FFFFFF; /* Pure White */
+            font-family: 'Space Mono', 'Futura', 'Courier New', Courier, monospace;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header Wordmark & Styling */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -2px; /* Tight-Kerning / Condensed */
+            text-transform: uppercase;
+            color: #FFFFFF;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #C5A059; /* Matte Earth Gold */
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto 15px auto;
+        }
+
+        .slogan {
+            font-size: 0.8rem;
+            letter-spacing: 2px; /* Wide technical mono spacing */
+            text-transform: uppercase;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+
+        /* Master Narrative Section */
+        .manifesto {
+            border-left: 3px solid #C5A059;
+            padding-left: 25px;
+            margin-bottom: 70px;
+            font-size: 1.15rem;
+        }
+
+        .manifesto p {
+            margin-bottom: 20px;
+        }
+
+        .headline-block {
+            font-size: 1.8rem; 
+            font-weight: bold; 
+            line-height: 1.3; 
+            margin-bottom: 30px; 
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .highlight-gold {
+            color: #C5A059;
+            font-weight: bold;
+        }
+
+        /* Structural Framework Tiers */
+        .framework-section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #FFFFFF;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .card {
+            border: 1px solid #FFFFFF;
+            padding: 30px;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #C5A059;
+            background-color: #25282D;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .card-meta {
+            font-size: 0.75rem;
+            color: #C5A059;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #CCCCCC;
+        }
+
+        /* Intake Pipeline Form Container */
+        .intake-container {
+            border: 2px solid #FFFFFF;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        .intake-container h2 {
+            border: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        .intake-intro {
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            color: #CCCCCC;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            background-color: #1C1E21;
+            border: 1px solid #FFFFFF;
+            color: #FFFFFF;
+            padding: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #C5A059;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .radio-label {
+            font-size: 0.95rem;
+            text-transform: none;
+            letter-spacing: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: normal;
+        }
+
+        input[type="radio"] {
+            accent-color: #C5A059;
+        }
+
+        button {
+            background-color: #FFFFFF;
+            color: #1C1E21;
+            border: none;
+            padding: 15px 40px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #C5A059;
+            color: #FFFFFF;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: #666666;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header Wordmark Frame -->
+        <header>
+            <h1>Archon Stack</h1>
+            <div class="divider"></div>
+            <div class="slogan">Blueprint Maker — Venture Architecture & Mainframe Logic</div>
+        </header>
+
+        <!-- Uncompromising B2I Operational Narrative -->
+        <section class="manifesto">
+            <div class="headline-block">
+                We engineer high-leverage business blueprints.<br>
+                <span class="highlight-gold">You provide the capital launch. We inject the mainframe logic.</span>
+            </div>
+            <p>Raw ideas are cheap and structurally vulnerable to commodity duplication. True enterprise power belongs exclusively to the architecture that initiates the system.</p>
+            <p>We do not consult established corporations or bill by the hour. We operate a private, distributed <span class="highlight-gold">Business-to-Individual (B2I)</span> creation engine. We bridge private citizens holding substantial liquid capital directly to ready-made, uncopyable corporate architectures built to dominate modern pipelines securely from AI mimicry.</p>
+            <p>Your entity does not officially exist until we initiate it. Upon delivery of our technical logic frameworks, your capital is instantly anchored into a fully operational, asset-light corporate mainframe.</p>
+        </section>
+
+        <!-- Dynamic Structural Tracks -->
+        <section class="framework-section">
+            <h2>The Initiation Frameworks</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <div class="card-meta">Option Alpha Track</div>
+                    <h3>The Proprietary Blueprint</h3>
+                    <p>A comprehensive system schematic and data workflow pipeline engineered to structure your raw concept from zero to one. You buy the complete architectural blueprint and uncopyable vocabulary maps to launch and own independently with total privacy.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-meta">Option Beta Track</div>
+                    <h3>Turnkey Orchestration</h3>
+                    <p>Total venture activation. Your new corporate entity plugs directly into our private white-label infrastructure stack. We handle the full backend server orchestration, database distribution, and operational mechanics behind a secure black box while you focus exclusively on revenue capture.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5-Question Individual Diagnostics Pipeline -->
+        <section class="intake-container">
+            <h2>System Diagnostics Portal</h2>
+            <p class="intake-intro">We filter individual deployment partnerships with extreme friction. If you are an independent individual holding the capital and vision required to instantiate an unyielding enterprise, verify your operational parameters below.</p>
+            
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Transmission Authenticated. Foundational B2I logic queued for evaluation.');">
+                
+                <!-- Identification Coordinates -->
+                <div class="form-group">
+                    Individual Identity / Private Coordinates</label>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Secure Communication Pipeline (Email)</label>
+                    <input type="email" id="contact" required placeholder="E.g., name@domain.com">
+                </div>
+
+                <!-- The 5 B2I Qualifying Questions -->
+                <div class="form-group">
